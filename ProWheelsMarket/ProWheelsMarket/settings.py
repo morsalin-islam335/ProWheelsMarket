@@ -1,6 +1,20 @@
 from pathlib import Path
 
 import environ
+
+import dj_database_url
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+
+DATABASES = {
+    'default': dj_database_url.config(
+        # Feel free to alter this value to suit your needs.
+        # default='postgresql://postgres:postgres@localhost:5432/mysite',
+        default = 'postgres://prowheelsmarket_user:0aWrgAtmJ6c0vM2UPEE7xIrbybsCer5w@dpg-cmvtuja1hbls73dh1hk0-a.oregon-postgres.render.com/prowheelsmarket',
+        conn_max_age=600
+    )
+}
+
 env = environ.Env()
 
 
@@ -9,16 +23,16 @@ environ.Env.read_env()
 
 
 SECRET_KEY = env('SECRET_KEY') # eta read kora assign korba
-DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.postgresql',
-       'NAME': env("DB_NAME"), 
-       'USER': env("DB_USER"),
-       'PASSWORD': env("DB_PASSWORD"),
-       'HOST': env("DB_HOST"),
-       'PORT': env("DB_PORT"),
-   }
-}
+# DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': env("DB_NAME"), 
+#        'USER': env("DB_USER"),
+#        'PASSWORD': env("DB_PASSWORD"),
+#        'HOST': env("DB_HOST"),
+#        'PORT': env("DB_PORT"),
+#    }
+# }
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
