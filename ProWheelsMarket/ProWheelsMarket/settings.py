@@ -10,7 +10,7 @@ DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
         # default='postgresql://postgres:postgres@localhost:5432/mysite',
-        default = 'postgres://prowheelsmarket_user:0aWrgAtmJ6c0vM2UPEE7xIrbybsCer5w@dpg-cmvtuja1hbls73dh1hk0-a.oregon-postgres.render.com/prowheelsmarket',
+        default = 'postgres://my_car_market_user:ZpmzzVX3A3b7gj2D6Jqykh1twoDQIBu2@dpg-cmvugi0cmk4c73ak3c7g-a.oregon-postgres.render.com/my_car_market',
         conn_max_age=600
     )
 }
