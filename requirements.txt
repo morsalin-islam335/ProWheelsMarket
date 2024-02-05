@@ -1,5 +1,4 @@
 asgiref
-bat-lang
 certifi
 charset-normalizer
 click
