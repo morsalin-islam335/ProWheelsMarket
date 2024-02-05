@@ -6,6 +6,7 @@ colorama
 crispy-bootstrap5
 decorator
 distlib
+dj-database-url
 Django
 django-crispy-forms
 django-environ
@@ -27,11 +28,12 @@ MouseInfo
 mss
 numpy
 opencv-contrib-python
-opencv-python
+opencv-python==4.8.0.76
 Pillow
 pipenv
 platformdirs
 psycopg2
+psycopg2-binary
 PyAutoGUI
 PyGetWindow
 Pygments
@@ -55,6 +57,8 @@ svgpathtools
 svgwrite
 tqdm
 turtle
+typing_extensions
 tzdata
+upgrade-pip
 urllib3
 virtualenv
