@@ -2,18 +2,20 @@ from pathlib import Path
 
 import environ
 
-import dj_database_url
+# import dj_database_url
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': dj_database_url.config(
-        # Feel free to alter this value to suit your needs.
-        # default='postgresql://postgres:postgres@localhost:5432/mysite',
-        default = 'postgres://my_car_market_user:ZpmzzVX3A3b7gj2D6Jqykh1twoDQIBu2@dpg-cmvugi0cmk4c73ak3c7g-a.oregon-postgres.render.com/my_car_market',
-        conn_max_age=600
-    )
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         # Feel free to alter this value to suit your needs.
+#         # default='postgresql://postgres:postgres@localhost:5432/mysite',
+#         default = 'postgres://my_car_market_user:ZpmzzVX3A3b7gj2D6Jqykh1twoDQIBu2@dpg-cmvugi0cmk4c73ak3c7g-a.oregon-postgres.render.com/my_car_market',
+        
+#     )
+# }
+
+
 
 env = environ.Env()
 
@@ -33,6 +35,7 @@ SECRET_KEY = env('SECRET_KEY') # eta read kora assign korba
 #        'PORT': env("DB_PORT"),
 #    }
 # }
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
@@ -41,16 +44,21 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER  = env("Email") #sender's email-id
 EMAIL_HOST_PASSWORD = env("Email_Password") #password associated with above email-id
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 
-BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
